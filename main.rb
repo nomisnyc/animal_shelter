@@ -1,12 +1,10 @@
 require 'pry'
 require 'rainbow'
-=begin
-
+## required objects
 require_relative 'animal'
 require_relative 'client'
-=end
 
-
+## Functions  - Standard
 def ec()
   gets
   print `clear`
@@ -17,25 +15,37 @@ def valid(*va) begin
   v=gets.chomp.downcase
 end while !( va.to_s.include? v) end
 
+## Function  - Custom
 def option(input)
     if input = 'c'
       #Adding new client
-
+      client_list << new_client
+      #
     elsif input ='a'
       #Adding new animal
-
+      animal_list << new_animal
+      #
+    elsif input = 'v'
+        puts "These animals are up for adoption:".foreground(:blue)
+        animal_list.each {|animal|  animal.up_for_adoption? ? puts animal.name.to_s.foreground(:yellow)}
+    elsif input = 'va'
+        animal_list.each {|animal| animal.up_for_adoption? ? puts animal.name.to_s.foreground(:yellow) : animal.name.to_s.foreground(:red)}
     else
       p "^^^^^   Error in input   ^^^^^^"
     end
 end
 
-
+#### Variable default #####
+client_list = []
+animal_list = []
 #################START NON-DEF ###############
 begin
   print "What would you like to do: \n"
-  print "Add Client (C) Animal (A) or Exit (E):"
-  input = valid("c","a","e")
-
+  print "Add Client (C)\nAnimal (A)\nView Animals up for adoption (V)\nView all Animals\nExit (E):"
+  input = valid("c","a","v","va","e")
+  #clear
+  gc
+  #go to options
   option(input)
 
 do while input != 'e'
