@@ -10,4 +10,20 @@ class Animal
     @up_for_adoption = true
   end
 
-  Animal.new('lucy', 'bulldog', '')
+  Animal.new('bone', 'bulldog', '2', 'female', [])
+  Animal.new('superbad', 'retriever', '1', 'male', [])
+  Animal.new('fetch', 'beagle', '1', 'female', [] )
+
+  def new_animal
+    print "Name: "
+    name = gets.chomp
+    print "Breed: "
+    breed = gets.chomp
+    print "Age: "
+    age = gets.chomp.to_f.round(1)
+    print "Gender: "
+    gender = gets.chomp
+    print "Toys: "
+    toys = gets.chomp
+  end
+end
