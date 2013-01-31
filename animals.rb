@@ -14,7 +14,10 @@ class Animal
   Animal.new('superbad', 'retriever', '1', 'male', [])
   Animal.new('fetch', 'beagle', '1', 'female', [] )
 
-  def new_animal
+
+end
+
+ def new_animal
     print "Name: "
     name = gets.chomp
     print "Breed: "
@@ -25,5 +28,6 @@ class Animal
     gender = gets.chomp
     print "Toys: "
     toys = gets.chomp
+
+    Animal.new(name,breed,age,gender,toys)
   end
-end
