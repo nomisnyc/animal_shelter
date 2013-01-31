@@ -18,15 +18,6 @@ def valid(*va) begin
   v=gets.chomp.downcase
 end while !( va.to_s.include? v) end
 
-
-def option(input)
-    if input = 'c'
-      #Adding new client
-
-    elsif input ='a'
-      #Adding new animal
-
-
 ## Function  - Custom
 def option(input,client_list,animal_list)
     if input == 'c'
@@ -50,17 +41,6 @@ def option(input,client_list,animal_list)
 end
 
 
-
-#################START NON-DEF ###############
-begin
-  print "What would you like to do: \n"
-  print "Add Client (C) Animal (A) or Exit (E):"
-  input = valid("c","a","e")
-
-  option(input)
-
-do while input != 'e'
-
 #### Variable default #####
 client_list = []
 animal_list = []
@@ -74,7 +54,6 @@ begin
   #ec
   #go to options
   option(input,client_list,animal_list)
-
 end while input != 'e'
 
 

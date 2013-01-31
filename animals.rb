@@ -10,9 +10,6 @@ class Animal
     @up_for_adoption = true
   end
 
-
-  Animal.new('lucy', 'bulldog', '')
-
   Animal.new('bone', 'bulldog', '2', 'female', [])
   Animal.new('superbad', 'retriever', '1', 'male', [])
   Animal.new('fetch', 'beagle', '1', 'female', [] )
