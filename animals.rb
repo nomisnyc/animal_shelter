@@ -1,18 +1,15 @@
 class Animal
   attr_accessor :name, :breed, :age, :gender, :toys, :up_for_adoption
 
-  def initialize(name, breed, age, gender, toys)
+  def initialize(name, breed, age, gender, toys, adopt)
     @name = name
     @breed = breed
     @age = age
     @gender = gender
     @toys = toys
-    @up_for_adoption = true
+    @up_for_adoption = adopt
   end
 
-  Animal.new('bone', 'bulldog', '2', 'female', [])
-  Animal.new('superbad', 'retriever', '1', 'male', [])
-  Animal.new('fetch', 'beagle', '1', 'female', [] )
 
 
 end
@@ -29,6 +26,6 @@ end
     print "Toys: "
     toys = gets.chomp
 
-    Animal.new(name,breed,age,gender,toys)
+    Animal.new(name,breed,age,gender,toys,true)
   end
 
